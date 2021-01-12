@@ -4,8 +4,10 @@ class ApplicationController < Sinatra::Base
   	set :views, "app/views"
   	set :public_dir, "public"
   end
-
+  
   get "/" do
-  	erb :index
+    @dog = Dog.new("ralph", "dalmation", 6)
+    
+    erb :index
   end
 end
